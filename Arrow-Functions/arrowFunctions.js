@@ -3,7 +3,6 @@ function greeting(name) {
     console.log(`Hello ${name}, How are you?`);
 }
 
-
 // ARRROW FUNCTION
 const greeting2 = name => console.log(`Hello ${name}, from arrow function`)
 
