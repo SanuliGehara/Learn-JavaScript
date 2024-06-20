@@ -75,4 +75,53 @@ const ageMap = ages
     .map(age => age * 2);
 
 //---------------- sort --------------------
+// sort companies by start yr
+// const sortedCompanies = companies.sort(function (c1, c2) {
+//     if(c1.start > c2.start) {
+//         return 1;
+//     } else {
+//         return -1;
+//     }
+// });
+
+//const sortedCompanies = companies.sort((a, b) => (a.start > b.start? 1: -1));
+
+// sort by category
+//const sortCatergory = companies.sort((a, b) => (a.category> b.category? 1:-1));
+
+// // sort by category - descending order
+// const sortCatergory = companies.sort((a, b) => (b.category > a.category? 1: -1));
+
+// sort ages
+// const sortAges = ages.sort((a, b) => a-b);  //Ascending order
+// const sortAges2 = ages.sort((a, b) => b-a);  //Descending order
+// console.log(sortAges);
+// console.log(sortAges2);
+
 //---------------- reduce ------------------
+// Age sum
+const ageSum = ages.reduce(function (total, age) {
+    return total + SubmitEvent;
+}, 0);
+
+const ageSum2 = ages.reduce((total, sum) => total + sum, 0);
+
+// total years for all companies
+const totalYears = companies.reduce(function (total, company) {
+    return total + (company.end - company.start);
+}, 0);
+
+const totalYears2 = companies.reduce((total, company) => total + (company.end - company.start), 0);
+
+//--------------- Combine methods ------------------
+// age < 18 && plus 1 map
+const map18 = ages.map(age => (age < 18 ? age : 0))
+    .filter(age => age != 0)
+    .map(age => age + 1);
+
+const combined = ages.map(age => age * 2)  //twice of each age
+.filter(age => age>= 50)           //ages >= 50
+.sort((a, b) => (a - b))          // sort - ascending order
+.reduce((sum, age) => (sum + age), 0);   // sum of all ages
+
+console.log(combined);
