@@ -1,0 +1,2 @@
+https://www.freecodecamp.org/news/object-oriented-programming-javascript/
+https://www.javascripttutorial.net/javascript-constructor-prototype/
